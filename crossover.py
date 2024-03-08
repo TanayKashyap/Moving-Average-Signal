@@ -1,11 +1,12 @@
 import pandas as pd
 import yfinance as yf  # You can use any other method to get stock data
 from twilio.rest import Client
+from password import password
 
 # Function to check moving average crossover and send email
 def check_crossover(stock_symbol):
-    twilio_account_sid = 'AC496d203fddbc633d132e37baa6589b69'
-    twilio_auth_token = '805f4a9426c836462a8edd25d09afb32'
+    twilio_account_sid = password.get('sid')
+    twilio_auth_token = password.get('token')
     from_twilio_number = '+15169906339'
     to_phone_number = '+12265051094'
 
